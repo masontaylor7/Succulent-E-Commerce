@@ -8,3 +8,4 @@ from .completed_order import Completed_Order
 from .shopping_cart import Shopping_Cart
 from .shopping_cart_item import Shopping_Cart_Item
 from .order_line import Order_Line
+from .review import Review

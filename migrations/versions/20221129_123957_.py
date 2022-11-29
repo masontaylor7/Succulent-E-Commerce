@@ -23,7 +23,7 @@ def upgrade():
     sa.Column('user_id', sa.Integer(), nullable=False),
     sa.Column('order_date', sa.DateTime(), server_default=sa.text('now()'), nullable=False),
     sa.Column('shipping_address_id', sa.Integer(), nullable=False),
-    sa.Column('order_total', sa.Numeric(), nullable=False),
+    sa.Column('order_total', sa.Numeric(precision=16, scale=2), nullable=False),
     sa.Column('order_status', sa.String(length=40), nullable=False),
     sa.ForeignKeyConstraint(['shipping_address_id'], ['addresses.id'], ),
     sa.ForeignKeyConstraint(['user_id'], ['users.id'], ),

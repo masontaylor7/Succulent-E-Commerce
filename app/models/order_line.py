@@ -17,5 +17,5 @@ class Order_Line(db.Model):
             'product': self.product,
             'order_id': self.order_id,
             'quantity': self.quantity,
-            'price': self.price
+            'price': self.price,
         }
