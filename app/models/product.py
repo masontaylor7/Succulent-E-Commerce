@@ -8,7 +8,7 @@ class Product(db.Model):
     name = db.Column(db.String(255), nullable=False)
     description = db.Column(db.String, nullable=False)
     quantity = db.Column(db.Integer, nullable=False)
-    price = db.Column(db.Integer, nullable=False)
+    price = db.Column(db.Numeric, nullable=False)
 
     product_images = db.relationship('Product_Image', back_populates='product')
 
@@ -20,4 +20,5 @@ class Product(db.Model):
             'description': self.description,
             'quantity': self.quantity,
             'price': self.price,
+            'product_images': self.product_image,
         }
