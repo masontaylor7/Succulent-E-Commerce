@@ -4,6 +4,7 @@ class Product(db.Model):
     __tablename__ = 'products'
 
     id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
     name = db.Column(db.String(255), nullable=False)
     description = db.Column(db.String, nullable=False)
     quantity = db.Column(db.Integer, nullable=False)
@@ -14,6 +15,7 @@ class Product(db.Model):
     def to_dict(self):
         return {
             'id': self.id,
+            'user_id': self.user_id,
             'name': self.name,
             'description': self.description,
             'quantity': self.quantity,
