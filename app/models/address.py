@@ -9,7 +9,7 @@ class Address(db.Model):
     city = db.Column(db.String(255), nullable=False)
     postal_code = db.Column(db.String(10), nullable=False)
 
-    user = db.relationship('User', secondary='user_addresses', back_populates='addresses')
+    users = db.relationship('User', secondary='user_addresses', back_populates='addresses')
 
     def to_dict(self):
         return {
